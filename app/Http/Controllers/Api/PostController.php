@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
 
-class PsotController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +26,10 @@ class PsotController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $post = Post::create($request->all());
+
+        return response()->json($post, 201);
     }
 
     /**
